@@ -6,10 +6,10 @@ A:
 	 echo -e "o\nn\np\n1\n131072\n172032\na\n\nn\np\n2\n172033\n2269185\nn\np\n3\n2269186\n\nt\n1\nb\nw\n" |  fdisk /dev/mmcblk0
 	
 	 Storage Layout as below
-	 Region 1   Region2   Region 3      Region 4         Region 5
- size     4KiB       64MiB     20MiB          1GiB        Remaing space
- content   mbr      firmware    EFI       Boot parition   RootFS partition
- format    raw        raw      fat32          ext4            ext4
+	 Region 1   Region2     Region 3      Region 4         Region 5
+ size     4KiB    64MiB-4KiB     20MiB          1GiB        Remaing space
+ content   mbr      firmware      EFI       Boot parition   RootFS partition
+ format    raw        raw        fat32          ext4            ext4
 	
 	4.get mbr.bin from sd card
 	 dd if=/dev/mmcblk0 of=16G_SD_MBR.bin bs=512 count=1
