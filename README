@@ -3,8 +3,13 @@ A:
 	1.running linux on pc
 	2.insert a 16 GiB sd card to pc
 	3.create three partition for sd card(you can get more information from Layerscape Software Development Kit 18.09 Documentation,Layerscape SDK user guide->LSDK memory Layout)
-	 echo -e "o\nn\np\n1\n131072\n172032\na\n\nn\np\n2\n172033\n2269185\nn\np\n3\n2269186\n\nt\n1\nb\nw\n" |  fdisk /dev/mmcblk0
-	
+	 echo -e "o\nn\np\n1\n131072\n172031\na\n\nn\np\n2\n172032\n2269183\nn\np\n3\n2269184\n\nt\n1\nb\nw\n" |  fdisk /dev/mmcblk0	
+
+	                    start                                                         size                                                     end     
+	 partition 1:  131072 sector = 131072 * 512 B = 64MiB        20MiB = 20 * 1024 * 1024 / 512 = 40960 sectors            131072 sectors + 20 MiB - 1 sector = 172031 sector      
+	 partition 2:       172032 sector                                                1GiB                                                     2269183 sector
+	 partition 3:       2269184 sector                                           remaining space                                              2269183 sector
+
 	 Storage Layout as below
 	 Region 1   Region2     Region 3      Region 4         Region 5
  size     4KiB    64MiB-4KiB     20MiB          1GiB        Remaing space
